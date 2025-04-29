@@ -18,7 +18,7 @@ def escape(value):
         """
         Callback to escape chars
         """
-        return "_x{:0>4x}_".format(ord(match.group(0)))
+        return f"_x{ord(match.group(0)):0>4x}_"
 
     return CHAR_REGEX.sub(_sub, value)
 

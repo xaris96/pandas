@@ -121,7 +121,7 @@ class ODFElementHandler(handler.ContentHandler):
                 convert = attrconverters.get(att, cnv_string)
                 convert(att, value, tag)
             except ValueError as res:
-                print_error("Error: Bad value '%s' for attribute %s:%s in  tag: <%s> - %s" % 
+                print_error("Error: Bad value '%s' for attribute %s:%s in  tag: <%s> - %s" %
                     (chop_arg(value), prefix, att[1], make_qname(tag), res))
 
         self.tagstack.append(tag)

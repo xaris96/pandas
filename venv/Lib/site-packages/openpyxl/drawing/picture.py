@@ -1,21 +1,19 @@
 # Copyright (c) 2010-2024 openpyxl
 
-from openpyxl.xml.constants import DRAWING_NS
-
-from openpyxl.descriptors.serialisable import Serialisable
+from openpyxl.chart.shapes import GraphicalProperties
 from openpyxl.descriptors import (
-    Typed,
+    Alias,
     Bool,
     String,
-    Alias,
+    Typed,
 )
 from openpyxl.descriptors.excel import ExtensionList as OfficeArtExtensionList
-
-from openpyxl.chart.shapes import GraphicalProperties
+from openpyxl.descriptors.serialisable import Serialisable
+from openpyxl.xml.constants import DRAWING_NS
 
 from .fill import BlipFillProperties
-from .properties import NonVisualDrawingProps
 from .geometry import ShapeStyle
+from .properties import NonVisualDrawingProps
 
 
 class PictureLocking(Serialisable):

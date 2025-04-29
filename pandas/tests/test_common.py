@@ -60,7 +60,7 @@ class TestRandomState:
         )
 
     def test_default(self):
-        assert com.random_state() is np.random
+        assert com.random_state(None) is np.random
 
     def test_array_like(self):
         state = np.random.default_rng(None).integers(0, 2**31, size=624, dtype="uint32")
@@ -81,7 +81,7 @@ class TestRandomState:
             == np.random.RandomState(np.random.PCG64(seed)).uniform()
         )
 
-    @pytest.mark.parametrize("state", ["test", 5.5])
+    @pytest.mark.parametrize("state", ["invalid_string", 3.5, [], {}])
     def test_error(self, state):
         msg = (
             "random_state must be an integer, array-like, a BitGenerator, Generator, "

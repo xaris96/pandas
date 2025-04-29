@@ -86,7 +86,7 @@ if Listfields or Xfields:
     for field_name, value_type, value in user_fields.list_fields_and_values(
         Xfields):
         print ("%s#%s:%s" % (field_name, value_type, value))
-    
+
 if listfields:
     for value in user_fields.list_fields():
         print (value)

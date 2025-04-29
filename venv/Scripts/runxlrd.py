@@ -3,7 +3,6 @@
 # This script is part of the xlrd package, which is released under a
 # BSD-style licence.
 
-from __future__ import print_function
 
 cmd_doc = """
 Commands:
@@ -31,17 +30,20 @@ xfc             Print "XF counts" and cell-type counts -- see code for details
 
 options = None
 if __name__ == "__main__":
-    import xlrd
+    import gc
+    import glob
     import sys
     import time
-    import glob
     import traceback
-    import gc
 
-    from xlrd.timemachine import xrange, REPR
+    import xlrd
+    from xlrd.timemachine import (
+        REPR,
+        xrange,
+    )
 
 
-    class LogHandler(object):
+    class LogHandler:
 
         def __init__(self, logfileobj):
             self.logfileobj = logfileobj
@@ -91,7 +93,7 @@ if __name__ == "__main__":
                 try:
                     showval = xlrd.xldate_as_tuple(cval, dmode)
                 except xlrd.XLDateError as e:
-                    showval = "%s:%s" % (type(e).__name__, e)
+                    showval = "{}:{}".format(type(e).__name__, e)
                     cty = xlrd.XL_CELL_ERROR
             elif cty == xlrd.XL_CELL_ERROR:
                 showval = xlrd.error_text_from_code.get(cval, '<Unknown error code 0x%02x>' % cval)
@@ -147,7 +149,7 @@ if __name__ == "__main__":
                 % (title, xlrd.cellname(rlo, clo), xlrd.cellname(rhi-1, chi-1)))
             for rx in xrange(rlo, rhi):
                 for cx in xrange(clo, chi):
-                    print("    %s: %r" % (xlrd.cellname(rx, cx), sh.cell_value(rx, cx)))
+                    print("    {}: {!r}".format(xlrd.cellname(rx, cx), sh.cell_value(rx, cx)))
 
     def show_labels(bk):
         # bk_header(bk)
@@ -292,7 +294,7 @@ if __name__ == "__main__":
             xlrd.count_records(args[1])
             sys.exit(0)
         if cmd == 'version':
-            print("xlrd: %s, from %s" % (xlrd_version, xlrd.__file__))
+            print("xlrd: {}, from {}".format(xlrd_version, xlrd.__file__))
             print("Python:", sys.version)
             sys.exit(0)
         if options.logfilename:
@@ -331,16 +333,16 @@ if __name__ == "__main__":
                     )
                     t1 = time.time()
                     if not options.suppress_timing:
-                        print("Open took %.2f seconds" % (t1-t0,))
+                        print("Open took {:.2f} seconds".format(t1-t0))
                 except xlrd.XLRDError as e:
-                    print("*** Open failed: %s: %s" % (type(e).__name__, e))
+                    print("*** Open failed: {}: {}".format(type(e).__name__, e))
                     continue
                 except KeyboardInterrupt:
                     print("*** KeyboardInterrupt ***")
                     traceback.print_exc(file=sys.stdout)
                     sys.exit(1)
                 except BaseException as e:
-                    print("*** Open failed: %s: %s" % (type(e).__name__, e))
+                    print("*** Open failed: {}: {}".format(type(e).__name__, e))
                     traceback.print_exc(file=sys.stdout)
                     continue
                 t0 = time.time()
@@ -377,7 +379,7 @@ if __name__ == "__main__":
                         print("GC post cmd:", fname, "->", n_unreachable, "unreachable objects")
                 if not options.suppress_timing:
                     t1 = time.time()
-                    print("\ncommand took %.2f seconds\n" % (t1-t0,))
+                    print("\ncommand took {:.2f} seconds\n".format(t1-t0))
 
         return None
 

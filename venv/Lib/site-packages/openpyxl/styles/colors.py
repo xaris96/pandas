@@ -1,12 +1,13 @@
 # Copyright (c) 2010-2024 openpyxl
 
 import re
+
 from openpyxl.compat import safe_string
 from openpyxl.descriptors import (
-    String,
     Bool,
-    MinMax,
     Integer,
+    MinMax,
+    String,
     Typed,
 )
 from openpyxl.descriptors.sequence import NestedSequence

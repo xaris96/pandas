@@ -2,9 +2,9 @@
 
 # Builtins styles as defined in Part 4 Annex G.2
 
-from .named_styles import NamedStyle
 from openpyxl.xml.functions import fromstring
 
+from .named_styles import NamedStyle
 
 normal = """
   <namedStyle builtinId="0" name="Normal">

@@ -1,11 +1,9 @@
-from __future__ import absolute_import
 # Copyright (c) 2010-2015 openpyxl
 
 """Implements the lxml.etree.xmlfile API using the standard library xml.etree"""
 
 
 from contextlib import contextmanager
-
 from xml.etree.ElementTree import (
     Element,
     _escape_cdata,
@@ -18,7 +16,7 @@ class LxmlSyntaxError(Exception):
     pass
 
 
-class _IncrementalFileWriter(object):
+class _IncrementalFileWriter:
     """Replacement for _IncrementalFileWriter of lxml"""
     def __init__(self, output_file):
         self._element_stack = []
@@ -138,7 +136,7 @@ class _IncrementalFileWriter(object):
             raise LxmlSyntaxError()
 
 
-class xmlfile(object):
+class xmlfile:
     """Context manager that can replace lxml.etree.xmlfile."""
     def __init__(self, output_file, buffered=False, encoding="utf-8", close=False):
         self._file = output_file

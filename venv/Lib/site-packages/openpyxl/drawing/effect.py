@@ -1,14 +1,14 @@
 # Copyright (c) 2010-2024 openpyxl
 
-from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.descriptors import (
-    Typed,
-    String,
-    Set,
     Bool,
-    Integer,
     Float,
+    Integer,
+    Set,
+    String,
+    Typed,
 )
+from openpyxl.descriptors.serialisable import Serialisable
 
 from .colors import ColorChoice
 

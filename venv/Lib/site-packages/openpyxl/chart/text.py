@@ -1,16 +1,14 @@
 # Copyright (c) 2010-2024 openpyxl
-from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.descriptors import (
-    Typed,
     Alias,
     Sequence,
+    Typed,
 )
-
-
+from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.drawing.text import (
-    RichTextProperties,
     ListStyle,
     Paragraph,
+    RichTextProperties,
 )
 
 from .data_source import StrRef

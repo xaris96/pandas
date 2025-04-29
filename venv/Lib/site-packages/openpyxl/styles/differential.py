@@ -1,18 +1,19 @@
 # Copyright (c) 2010-2024 openpyxl
 
 from openpyxl.descriptors import (
-    Typed,
-    Sequence,
     Alias,
+    Sequence,
+    Typed,
 )
 from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.styles import (
-    Font,
-    Fill,
-    Border,
     Alignment,
+    Border,
+    Fill,
+    Font,
     Protection,
-    )
+)
+
 from .numbers import NumberFormat
 
 

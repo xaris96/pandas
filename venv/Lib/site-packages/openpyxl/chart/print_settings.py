@@ -1,14 +1,13 @@
 # Copyright (c) 2010-2024 openpyxl
 
-from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.descriptors import (
+    Alias,
     Float,
     Typed,
-    Alias,
 )
-
-from openpyxl.worksheet.page import PrintPageSetup
+from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.worksheet.header_footer import HeaderFooter
+from openpyxl.worksheet.page import PrintPageSetup
 
 
 class PageMargins(Serialisable):

@@ -2,11 +2,8 @@
 
 
 
-from openpyxl.descriptors.nested import (
-    NestedMinMax
-    )
-
 from openpyxl.descriptors import Typed
+from openpyxl.descriptors.nested import NestedMinMax
 
 from .data_source import NumFmt
 

@@ -1,11 +1,11 @@
 # Copyright (c) 2010-2024 openpyxl
 
-from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.descriptors import (
-    Integer,
     Bool,
+    Integer,
     Sequence,
 )
+from openpyxl.descriptors.serialisable import Serialisable
 
 
 class Break(Serialisable):

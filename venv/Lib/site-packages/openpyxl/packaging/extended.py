@@ -1,16 +1,15 @@
 # Copyright (c) 2010-2024 openpyxl
 
 
-from openpyxl.descriptors.serialisable import Serialisable
+from openpyxl import __version__
 from openpyxl.descriptors import (
     Typed,
 )
 from openpyxl.descriptors.nested import (
     NestedText,
 )
-
+from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.xml.constants import XPROPS_NS
-from openpyxl import __version__
 
 
 class DigSigBlob(Serialisable):

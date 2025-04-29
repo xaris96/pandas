@@ -2,13 +2,13 @@
 
 from openpyxl.descriptors import (
     Bool,
-    Integer,
-    String,
-    Set,
     Float,
-    Typed,
+    Integer,
     NoneSet,
     Sequence,
+    Set,
+    String,
+    Typed,
 )
 from openpyxl.descriptors.excel import ExtensionList
 from openpyxl.descriptors.serialisable import Serialisable

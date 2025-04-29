@@ -102,7 +102,10 @@ def create_shortcut(
 
 # Support the same list of "path names" as bdist_wininst used to
 def get_special_folder_path(path_name):
-    from win32com.shell import shell, shellcon
+    from win32com.shell import (
+        shell,
+        shellcon,
+    )
 
     for maybe in """
         CSIDL_COMMON_STARTMENU CSIDL_STARTMENU CSIDL_COMMON_APPDATA
@@ -302,7 +305,10 @@ def RegisterPythonwin(register=True, lib_dir=None):
                         raise
     finally:
         # tell windows about the change
-        from win32com.shell import shell, shellcon
+        from win32com.shell import (
+            shell,
+            shellcon,
+        )
 
         shell.SHChangeNotify(
             shellcon.SHCNE_ASSOCCHANGED, shellcon.SHCNF_IDLIST, None, None
@@ -339,8 +345,11 @@ def get_system_dir():
 
     try:
         import pythoncom
+        from win32com.shell import (
+            shell,
+            shellcon,
+        )
         import win32process
-        from win32com.shell import shell, shellcon
 
         try:
             if win32process.IsWow64Process():

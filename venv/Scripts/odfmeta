@@ -59,7 +59,7 @@ def exitwithusage(exitcode=2):
     sys.exit(exitcode)
 
 def normalize(str):
-    """ 
+    """
     The normalize-space function returns the argument string with whitespace
     normalized by stripping leading and trailing whitespace and replacing
     sequences of whitespace characters by a single space.

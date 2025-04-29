@@ -1,13 +1,13 @@
 # Copyright (c) 2010-2024 openpyxl
 
-from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.descriptors import (
-    Sequence,
-    String,
     Bool,
     NoneSet,
-
+    Sequence,
+    String,
 )
+from openpyxl.descriptors.serialisable import Serialisable
+
 
 class SmartTag(Serialisable):
 

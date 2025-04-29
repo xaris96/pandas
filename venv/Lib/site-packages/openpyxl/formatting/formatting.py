@@ -3,16 +3,16 @@
 from collections import OrderedDict
 
 from openpyxl.descriptors import (
-    Bool,
-    Sequence,
     Alias,
+    Bool,
     Convertible,
+    Sequence,
 )
 from openpyxl.descriptors.serialisable import Serialisable
+from openpyxl.worksheet.cell_range import MultiCellRange
 
 from .rule import Rule
 
-from openpyxl.worksheet.cell_range import MultiCellRange
 
 class ConditionalFormatting(Serialisable):
 
@@ -42,7 +42,7 @@ class ConditionalFormatting(Serialisable):
 
 
     def __repr__(self):
-        return "<{cls} {cells}>".format(cls=self.__class__.__name__, cells=self.sqref)
+        return f"<{self.__class__.__name__} {self.sqref}>"
 
 
     def __contains__(self, coord):

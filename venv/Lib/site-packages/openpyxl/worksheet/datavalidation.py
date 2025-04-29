@@ -4,22 +4,21 @@ from collections import defaultdict
 from itertools import chain
 from operator import itemgetter
 
-from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.descriptors import (
-    Bool,
-    NoneSet,
-    String,
-    Sequence,
     Alias,
-    Integer,
+    Bool,
     Convertible,
+    Integer,
+    NoneSet,
+    Sequence,
+    String,
 )
 from openpyxl.descriptors.nested import NestedText
-
+from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.utils import (
-    rows_from_range,
     coordinate_to_tuple,
     get_column_letter,
+    rows_from_range,
 )
 
 

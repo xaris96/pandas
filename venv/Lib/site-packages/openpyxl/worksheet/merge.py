@@ -2,13 +2,12 @@
 
 import copy
 
-from openpyxl.descriptors.serialisable import Serialisable
+from openpyxl.cell.cell import MergedCell
 from openpyxl.descriptors import (
     Integer,
     Sequence,
 )
-
-from openpyxl.cell.cell import MergedCell
+from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.styles.borders import Border
 
 from .cell_range import CellRange

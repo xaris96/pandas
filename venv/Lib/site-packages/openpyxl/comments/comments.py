@@ -24,7 +24,7 @@ class Comment:
         )
 
     def __repr__(self):
-        return "Comment: {0} by {1}".format(self.content, self.author)
+        return f"Comment: {self.content} by {self.author}"
 
 
     def __copy__(self):

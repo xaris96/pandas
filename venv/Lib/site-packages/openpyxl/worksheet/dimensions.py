@@ -3,24 +3,24 @@
 from copy import copy
 
 from openpyxl.compat import safe_string
-from openpyxl.utils import (
-    get_column_letter,
-    get_column_interval,
-    column_index_from_string,
-    range_boundaries,
-)
-from openpyxl.utils.units import DEFAULT_COLUMN_WIDTH
 from openpyxl.descriptors import (
-    Integer,
-    Float,
+    Alias,
     Bool,
+    Float,
+    Integer,
     Strict,
     String,
-    Alias,
 )
 from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.styles.styleable import StyleableObject
+from openpyxl.utils import (
+    column_index_from_string,
+    get_column_interval,
+    get_column_letter,
+    range_boundaries,
+)
 from openpyxl.utils.bound_dictionary import BoundDictionary
+from openpyxl.utils.units import DEFAULT_COLUMN_WIDTH
 from openpyxl.xml.functions import Element
 
 

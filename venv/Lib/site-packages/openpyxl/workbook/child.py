@@ -21,7 +21,7 @@ def avoid_duplicate_name(names, value):
     # Check for an absolute match in which case we need to find an alternative
     match = [n for n in names if n.lower() == value.lower()]
     if match:
-        names = u",".join(names)
+        names = ",".join(names)
         sheet_title_regex = re.compile(f'(?P<title>{re.escape(value)})(?P<count>\\d*),?', re.I)
         matches = sheet_title_regex.findall(names)
         if matches:
@@ -30,7 +30,7 @@ def avoid_duplicate_name(names, value):
             highest = 0
             if counts:
                 highest = max(counts)
-            value = u"{0}{1}".format(value, highest + 1)
+            value = f"{value}{highest + 1}"
     return value
 
 
@@ -49,7 +49,7 @@ class _WorkbookChild:
 
 
     def __repr__(self):
-        return '<{0} "{1}">'.format(self.__class__.__name__, self.title)
+        return f'<{self.__class__.__name__} "{self.title}">'
 
 
     @property
@@ -89,7 +89,7 @@ class _WorkbookChild:
 
         m = INVALID_TITLE_REGEX.search(value)
         if m:
-            msg = "Invalid character {0} found in sheet title".format(m.group(0))
+            msg = f"Invalid character {m.group(0)} found in sheet title"
             raise ValueError(msg)
 
         if self.title is not None and self.title != value:

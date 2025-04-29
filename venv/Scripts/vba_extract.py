@@ -11,7 +11,10 @@
 #
 
 import sys
-from zipfile import BadZipFile, ZipFile
+from zipfile import (
+    BadZipFile,
+    ZipFile,
+)
 
 
 def extract_file(xlsm_zip, filename):
@@ -57,7 +60,7 @@ try:
         print(f"Extracted: {vba_signature_filename}")
 
 
-except IOError as e:
+except OSError as e:
     print(f"File error: {str(e)}")
     sys.exit()
 

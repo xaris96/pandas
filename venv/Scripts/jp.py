@@ -1,9 +1,9 @@
 #!C:\Users\Zpela\pandas\venv\Scripts\python.exe
 
-import sys
-import json
 import argparse
+import json
 from pprint import pformat
+import sys
 
 import jmespath
 from jmespath import exceptions
@@ -27,7 +27,7 @@ def main():
         sys.stdout.write('\n')
         return 0
     if args.filename:
-        with open(args.filename, 'r') as f:
+        with open(args.filename) as f:
             data = json.load(f)
     else:
         data = sys.stdin.read()

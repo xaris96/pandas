@@ -1,9 +1,9 @@
-from openpyxl.descriptors.serialisable import Serialisable
 from openpyxl.descriptors import (
-    String,
     Sequence,
+    String,
 )
 from openpyxl.descriptors.excel import Relation
+from openpyxl.descriptors.serialisable import Serialisable
 
 
 class Hyperlink(Serialisable):

@@ -1,22 +1,23 @@
 # Copyright (c) 2010-2024 openpyxl
 
-from openpyxl.descriptors.serialisable import Serialisable
+from openpyxl.chart.shapes import GraphicalProperties
+from openpyxl.chart.text import RichText
 from openpyxl.descriptors import (
-    Typed,
+    Alias,
     Bool,
     Integer,
     String,
-    Alias,
+    Typed,
 )
 from openpyxl.descriptors.excel import ExtensionList as OfficeArtExtensionList
-from openpyxl.chart.shapes import GraphicalProperties
-from openpyxl.chart.text import RichText
+from openpyxl.descriptors.serialisable import Serialisable
 
+from .geometry import ShapeStyle
 from .properties import (
     NonVisualDrawingProps,
     NonVisualDrawingShapeProps,
 )
-from .geometry import ShapeStyle
+
 
 class Connection(Serialisable):
 
