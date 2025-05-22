@@ -251,7 +251,6 @@ class TestSetOps:
 
         index = index.unique()
 
-        # Mixed int string
         if index.equals(Index([0, "a", 1, "b", 2, "c"])):
             index = index.astype(str)
 
