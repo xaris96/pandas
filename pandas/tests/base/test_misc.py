@@ -149,7 +149,6 @@ def test_searchsorted(request, index_or_series_obj):
 
     if isinstance(obj, pd.MultiIndex):
         request.applymarker(pytest.mark.xfail(reason="GH 14833", strict=False))
-        return
 
     if isinstance(obj, Index):
         if obj.inferred_type in ["mixed", "mixed-integer"]:
@@ -157,10 +156,11 @@ def test_searchsorted(request, index_or_series_obj):
                 obj = obj.astype(str)
             except (TypeError, ValueError):
                 request.applymarker(pytest.mark.xfail(reason="Mixed types"))
-                return
 
         elif obj.dtype.kind == "c":
-            return
+            request.applymarker(
+                pytest.mark.xfail(reason="complex objects are not comparable")
+            )
 
     max_obj = max(obj, default=0)
     index = np.searchsorted(obj, max_obj)
